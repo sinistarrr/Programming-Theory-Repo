@@ -168,18 +168,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 0
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.02
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 0
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 0, z: 0}
+  <RotationSpeed>k__BackingField: 0
+  <FloatSpeed>k__BackingField: 0.055
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!1 &288753223
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,18 +461,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.001
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 1
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 14, z: 0}
+  <RotationSpeed>k__BackingField: 2
+  <FloatSpeed>k__BackingField: 0.001
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,18 +1106,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 0
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.02
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 0
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 0, z: 0}
+  <RotationSpeed>k__BackingField: 0
+  <FloatSpeed>k__BackingField: 0.055
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,18 +1436,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 0
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.02
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 0
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 0, z: 0}
+  <RotationSpeed>k__BackingField: 0
+  <FloatSpeed>k__BackingField: 0.055
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!1 &982961763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,18 +1678,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.001
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 0
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 0, z: 0}
+  <RotationSpeed>k__BackingField: 0
+  <FloatSpeed>k__BackingField: 0.001
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!1 &989749232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,18 +1987,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2229205f33fccee478767dcb98fe9c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 2, z: 0}
-  rotationSpeed: 25
-  floatSpeed: 0.001
-  floatRate: 2
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  <IsAnimated>k__BackingField: 1
+  <IsRotating>k__BackingField: 0
+  <IsFloating>k__BackingField: 1
+  <IsScaling>k__BackingField: 0
+  <rotationAngle>k__BackingField: {x: 0, y: 0, z: 0}
+  <RotationSpeed>k__BackingField: 0
+  <FloatSpeed>k__BackingField: 0.001
+  <FloatRate>k__BackingField: 2
+  <StartScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <EndScale>k__BackingField: {x: 0, y: 0, z: 0}
+  <ScaleSpeed>k__BackingField: 0
+  <ScaleRate>k__BackingField: 0
 --- !u!114 &1273786418
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,89 +1,108 @@
 using UnityEngine;
 using System.Collections;
 
-public class AnimationScript : MonoBehaviour {
+public class AnimationScript : MonoBehaviour
+{
 
-    public bool isAnimated = false;
+    [field: SerializeField] public bool IsAnimated { get; set; } = false;
 
-    public bool isRotating = false;
-    public bool isFloating = false;
-    public bool isScaling = false;
+    [field: SerializeField] public bool IsRotating { get; set; } = false;
+    [field: SerializeField] public bool IsFloating { get; set; } = false;
+    [field: SerializeField] public bool IsScaling { get; set; } = false;
 
-    public Vector3 rotationAngle;
-    public float rotationSpeed;
+    [field: SerializeField] public Vector3 rotationAngle { get; set; }
+    [field: SerializeField] public float RotationSpeed { get; set; }
 
-    public float floatSpeed;
-    private bool goingUp = true;
-    public float floatRate;
-    private float floatTimer;
-   
-    public Vector3 startScale;
-    public Vector3 endScale;
+    [field: SerializeField] public float FloatSpeed { get; set; }
+    [field: SerializeField] public float FloatRate { get; set; }
 
-    private bool scalingUp = true;
-    public float scaleSpeed;
-    public float scaleRate;
-    private float scaleTimer;
+    [field: SerializeField] public Vector3 StartScale { get; set; }
+    [field: SerializeField] public Vector3 EndScale { get; set; }
+    [field: SerializeField] public float ScaleSpeed { get; set; }
+    [field: SerializeField] public float ScaleRate { get; set; }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    private bool GoingUp { get; set; } = true;
+    private float FloatTimer { get; set; }
+    private bool ScalingUp { get; set; } = true;
+    private float ScaleTimer { get; set; }
 
-       
-        
-        if(isAnimated)
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (IsAnimated)
         {
-            if(isRotating)
+            RotationHandler();
+            FloatingHandler();
+            ScalingHandler();
+        }
+    }
+
+    private void RotationHandler()
+    {
+        if (IsRotating)
+        {
+            transform.Rotate(RotationSpeed * Time.deltaTime * rotationAngle);
+        }
+    }
+    private void FloatingHandler()
+    {
+        if (IsFloating)
+        {
+            FloatTimer += Time.deltaTime;
+            Vector3 moveDir = new Vector3(0.0f, FloatSpeed, 0.0f);
+            transform.Translate(moveDir);
+
+            if (GoingUp && FloatTimer >= FloatRate)
             {
-                transform.Rotate(rotationAngle * rotationSpeed * Time.deltaTime);
+                GoingUp = false;
+                FloatTimer = 0;
+                FloatSpeed = -FloatSpeed;
             }
 
-            if(isFloating)
+            else if (!GoingUp && FloatTimer >= FloatRate)
             {
-                floatTimer += Time.deltaTime;
-                Vector3 moveDir = new Vector3(0.0f, floatSpeed, 0.0f);
-                // Vector3 moveDir = new Vector3(0.0f, 0.0f, floatSpeed);
-                transform.Translate(moveDir);
-
-                if (goingUp && floatTimer >= floatRate)
-                {
-                    goingUp = false;
-                    floatTimer = 0;
-                    floatSpeed = -floatSpeed;
-                }
-
-                else if(!goingUp && floatTimer >= floatRate)
-                {
-                    goingUp = true;
-                    floatTimer = 0;
-                    floatSpeed = +floatSpeed;
-                }
-            }
-
-            if(isScaling)
-            {
-                scaleTimer += Time.deltaTime;
-
-                if (scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, endScale, scaleSpeed * Time.deltaTime);
-                }
-                else if (!scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, startScale, scaleSpeed * Time.deltaTime);
-                }
-
-                if(scaleTimer >= scaleRate)
-                {
-                    if (scalingUp) { scalingUp = false; }
-                    else if (!scalingUp) { scalingUp = true; }
-                    scaleTimer = 0;
-                }
+                GoingUp = true;
+                FloatTimer = 0;
+                FloatSpeed = +FloatSpeed;
             }
         }
-	}
+    }
+
+    private void ScalingHandler()
+    {
+        if (IsScaling)
+        {
+            ScaleTimer += Time.deltaTime;
+
+            if (ScalingUp)
+            {
+                transform.localScale = Vector3.Lerp(transform.localScale, EndScale, ScaleSpeed * Time.deltaTime);
+            }
+            else if (!ScalingUp)
+            {
+                transform.localScale = Vector3.Lerp(transform.localScale, StartScale, ScaleSpeed * Time.deltaTime);
+            }
+
+            if (ScaleTimer >= ScaleRate)
+            {
+                if (ScalingUp)
+                {
+                    ScalingUp = false;
+                }
+                else if (!ScalingUp)
+                {
+                    ScalingUp = true;
+                }
+                ScaleTimer = 0;
+            }
+        }
+
+    }
 }
