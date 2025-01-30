@@ -55,23 +55,8 @@ public class AnimationScript : MonoBehaviour
     {
         if (IsFloating)
         {
-            FloatTimer += Time.deltaTime;
-            Vector3 moveDir = new Vector3(0.0f, FloatSpeed, 0.0f);
-            transform.Translate(moveDir);
-
-            if (GoingUp && FloatTimer >= FloatRate)
-            {
-                GoingUp = false;
-                FloatTimer = 0;
-                FloatSpeed = -FloatSpeed;
-            }
-
-            else if (!GoingUp && FloatTimer >= FloatRate)
-            {
-                GoingUp = true;
-                FloatTimer = 0;
-                FloatSpeed = +FloatSpeed;
-            }
+            MoveFloatingObject();
+            ManageFloatingDirection();
         }
     }
 
@@ -79,30 +64,63 @@ public class AnimationScript : MonoBehaviour
     {
         if (IsScaling)
         {
-            ScaleTimer += Time.deltaTime;
+            ScaleObject();
+            ManageScalingDirection();
+        }
 
+    }
+
+    private void ScaleObject()
+    {
+        if (ScalingUp)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, EndScale, ScaleSpeed * Time.deltaTime);
+        }
+        else if (!ScalingUp)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, StartScale, ScaleSpeed * Time.deltaTime);
+        }
+    }
+
+    private void ManageScalingDirection()
+    {
+        ScaleTimer += Time.deltaTime;
+
+        if (ScaleTimer >= ScaleRate)
+        {
             if (ScalingUp)
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, EndScale, ScaleSpeed * Time.deltaTime);
+                ScalingUp = false;
             }
             else if (!ScalingUp)
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, StartScale, ScaleSpeed * Time.deltaTime);
+                ScalingUp = true;
             }
+            ScaleTimer = 0;
+        }
+    }
 
-            if (ScaleTimer >= ScaleRate)
-            {
-                if (ScalingUp)
-                {
-                    ScalingUp = false;
-                }
-                else if (!ScalingUp)
-                {
-                    ScalingUp = true;
-                }
-                ScaleTimer = 0;
-            }
+    private void MoveFloatingObject()
+    {
+        FloatTimer += Time.deltaTime;
+        Vector3 moveDir = new Vector3(0.0f, FloatSpeed, 0.0f);
+        transform.Translate(moveDir);
+    }
+
+    private void ManageFloatingDirection()
+    {
+        if (GoingUp && FloatTimer >= FloatRate)
+        {
+            GoingUp = false;
+            FloatTimer = 0;
+            FloatSpeed = -FloatSpeed;
         }
 
+        else if (!GoingUp && FloatTimer >= FloatRate)
+        {
+            GoingUp = true;
+            FloatTimer = 0;
+            FloatSpeed = +FloatSpeed;
+        }
     }
 }
