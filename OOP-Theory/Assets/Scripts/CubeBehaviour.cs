@@ -9,7 +9,4 @@ public class CubeBehaviour : ShapeBehaviour
             return "Cube";
         }
     }
-    protected override void DisplayText(){
-        
-    }
 }

@@ -9,7 +9,4 @@ public class CapsuleBehaviour : ShapeBehaviour
             return "Capsule";
         }
     }
-    protected override void DisplayText(){
-        
-    }
 }

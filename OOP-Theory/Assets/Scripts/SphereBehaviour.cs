@@ -10,7 +10,4 @@ public class SphereBehaviour : ShapeBehaviour
         }
     }
 
-    protected override void DisplayText(){
-        // Display Text for 
-    }
 }

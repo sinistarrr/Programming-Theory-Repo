@@ -1,20 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public abstract class ShapeBehaviour : MonoBehaviour
 {
     abstract protected string Type { get;}
 
     protected Outline OutlineScript { get; private set;}
-    public Color ShapeColor { get; private set; }
-    public string Name { get; set;}
+    public GameObject ShapeDescription;
+    [field: SerializeField] public string Name { get; set;}
+
+    private bool textIsEnabled {get; set;}
     
 
     protected void Start()
     {
         OutlineScript = GetComponent<Outline>();
-        ShapeColor = gameObject.GetComponent<MeshRenderer>().material.color;
-        Debug.Log(OutlineScript == null);
     }
 
     protected void Update()
@@ -35,8 +37,11 @@ public abstract class ShapeBehaviour : MonoBehaviour
     protected void OnMouseDown()
     {
         Debug.Log("I am a " + Type + " !");
-        DisplayText();
+        textIsEnabled = !textIsEnabled;
+        DisplayText(textIsEnabled);
     }
 
-    protected abstract void DisplayText();
+    protected void DisplayText(bool enabled){
+        ShapeDescription.SetActive(enabled);
+    }
 }
