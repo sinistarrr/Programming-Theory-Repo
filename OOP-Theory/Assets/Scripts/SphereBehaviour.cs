@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SphereBehaviour : ShapeBehaviour
+public class SphereBehaviour : ShapeBehaviour // INHERITANCE
 {
-    protected override string Type
+    protected override string Type // POLYMORPHISM
     {
         get
         {

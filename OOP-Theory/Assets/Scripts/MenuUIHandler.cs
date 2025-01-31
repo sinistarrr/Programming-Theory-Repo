@@ -4,20 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIHandler : MonoBehaviour
 {
-
-    [field: SerializeField] private TMP_InputField InputFieldName{ get; set; }
+    [field: SerializeField] private TMP_InputField InputFieldName{ get; set; } // ENCAPSULATION
     
 
     void Start(){
         InputFieldName.onEndEdit.AddListener(SubmitName);
     }
 
-    public void StartNew(int sceneNumber){
+    public void StartNew(int sceneNumber){ // ENCAPSULATION
         switch(sceneNumber){
             case 1:
                 var op = SceneManager.LoadSceneAsync(1);
                 op.completed += (x) => {
-                    MainManager.Instance.VariablesInit();
+                    MainManager.Instance.VariablesInit(); // ABSTRACTION
                 };
                 break;
             default:
@@ -25,10 +24,9 @@ public class MenuUIHandler : MonoBehaviour
                 break;
         }
     }
-    public void SubmitName(string arg0)
+    public void SubmitName(string arg0) // ENCAPSULATION
     {
-        Debug.Log(arg0);
         MainManager.Instance.PlayerName = arg0;
-        StartNew(1);
+        StartNew(1); // ABSTRACTION
     }
 }

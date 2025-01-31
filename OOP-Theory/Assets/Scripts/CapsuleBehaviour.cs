@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CapsuleBehaviour : ShapeBehaviour
+public class CapsuleBehaviour : ShapeBehaviour // INHERITANCE
 {
-    protected override string Type
+    protected override string Type // POLYMORPHISM
     {
         get
         {

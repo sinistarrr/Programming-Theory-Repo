@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CubeBehaviour : ShapeBehaviour
+public class CubeBehaviour : ShapeBehaviour // INHERITANCE
 {
-    protected override string Type
+    protected override string Type // POLYMORPHISM
     {
         get
         {
